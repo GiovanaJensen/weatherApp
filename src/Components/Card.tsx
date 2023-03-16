@@ -40,7 +40,7 @@ export const Card = (props:CardProps) => {
            </Div>
            <Div>
               <FontAwesomeIcon icon={faTemperatureThreeQuarters} />
-              <p>Feels like: {props.feelsLike}</p>
+              <p>Feels like: {props.feelsLike}°C</p>
            </Div>
         </SectionHTML>
     )
