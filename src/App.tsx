@@ -2,7 +2,6 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import {Weather} from './Components/Weather';
 
-
 type City = {
   country: string;
   lat: number;
