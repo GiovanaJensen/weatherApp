@@ -41,7 +41,7 @@ export const Weather = (props: WeatherProps): JSX.Element => {
                         country={weather.sys.country}
                     />
                     <Main 
-                        img={` https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+                        img={` https://openweathermap.org/img/wn/${weather.weather[0].icon}@4x.png`}
                         temp={weather.main.temp}
                     />
                     <Card 

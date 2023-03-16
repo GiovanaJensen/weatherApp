@@ -1,3 +1,20 @@
+import styled from "styled-components";
+
+const MainHTML = styled.main`
+    display: flex;
+    justify-content:center;
+    align-items: center;
+`
+
+const Img = styled.img`
+    height: 30vh;
+    object-fit: contain;
+`
+
+const H3 = styled.h3`
+    font-size: 2rem;
+`
+
 interface MainProps {
     img: string;
     temp: number;
@@ -5,10 +22,10 @@ interface MainProps {
 
 export const Main = (props:MainProps) => {
     return (
-        <main>
-            <img src={props.img} alt="" />
-            <h3>{props.temp}°C</h3>
-        </main>
+        <MainHTML>
+            <Img src={props.img} alt="Temperature Image" />
+            <H3>{props.temp}°C</H3>
+        </MainHTML>
         
     )
 }
