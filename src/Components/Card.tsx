@@ -1,30 +1,31 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faDroplet, faEye, faTemperatureThreeQuarters, faWind } from "@fortawesome/free-solid-svg-icons";
 
 interface CardProps {
     windSpeed: number;
     visibility: number;
     humidity: number;
-    timezone: number;
+    feelsLike: number;
 }
 
 export const Card = (props:CardProps) => {
     return (
         <section>
            <div>
-           {/* <FontAwesomeIcon icon="fa-solid fa-temperature-three-quarters" /> */}
-             <p>Wind Speed: {props.windSpeed}</p>
+              <FontAwesomeIcon icon={faWind} />
+              <p>Wind Speed: {props.windSpeed}</p>
            </div>
            <div>
-             <img src="" alt="" />
+             <FontAwesomeIcon icon={faEye} />
              <p>Visibility: {props.visibility}</p>
            </div>
            <div>
-              <img src="" alt="" />
+              <FontAwesomeIcon icon={faDroplet} />
               <p>Humidity: {props.humidity}</p>
            </div>
            <div>
-              <img src="" alt="" />
-              <p>Timezone: {props.timezone}</p>
+              <FontAwesomeIcon icon={faTemperatureThreeQuarters} />
+              <p>Feels like: {props.feelsLike}</p>
            </div>
         </section>
     )

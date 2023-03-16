@@ -2,6 +2,8 @@ import {useState, useEffect} from 'react';
 import axios from 'axios';
 import { Root } from '../interfaces/IWeather';
 import {Card} from './Card';
+import { Header } from './Header';
+import { Main } from './Main';
 
 interface WeatherProps {
     lat: number,
@@ -34,26 +36,20 @@ export const Weather = (props: WeatherProps): JSX.Element => {
         <div>
             {weather ? (
                 <div className="weather">
-                    <h2>{weather.name} , {weather.sys.country}</h2>
-                    <div>
-                        <img src={` https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`} alt="" />
-                        <h3>{weather.main.temp}°C</h3>
-                    </div>
-                    <section>
-                        <p>Temp Min: {weather.main.temp_min}</p>
-                        <p>Temp Max: {weather.main.temp_max}</p>
-                    </section>
+                    <Header 
+                        name={weather.name} 
+                        country={weather.sys.country}
+                    />
+                    <Main 
+                        img={` https://openweathermap.org/img/wn/${weather.weather[0].icon}.png`}
+                        temp={weather.main.temp}
+                    />
                     <Card 
                         windSpeed={weather.wind.speed} 
                         visibility={weather.visibility}
                         humidity={weather.main.humidity}
-                        timezone={weather.timezone}
+                        feelsLike={weather.main.feels_like}
                     />
-                    <section>
-                        <p>{weather.weather[0].main}</p>
-                        <p>{weather.weather[0].description}</p>
-                    </section>
-                    
                 </div>
             ): (
                 <p>Loading...</p>

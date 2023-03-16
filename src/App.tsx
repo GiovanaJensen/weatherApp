@@ -14,7 +14,7 @@ function App() {
   const [city, setCity] = useState<City | null>(null);
 
   const api_key = "2a13aa0a341607040488e8501fc48eb5";
-  const city_name = "denver";
+  const city_name = "Amã";
   
   const api = `http://api.openweathermap.org/geo/1.0/direct?q=${city_name}&limit=1&appid=${api_key}`
 
