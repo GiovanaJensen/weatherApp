@@ -4,6 +4,7 @@ const MainHTML = styled.main`
     display: flex;
     justify-content:center;
     align-items: center;
+    height: 60vh;
 `
 
 const Img = styled.img`
