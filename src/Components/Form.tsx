@@ -1,6 +1,29 @@
 import {useState} from 'react';
 import axios from 'axios';
 import {Weather} from './Weather';
+import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
+
+const FormHTML = styled.form`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+`
+
+const Input = styled.input`
+    margin-left: 1rem;
+    background: transparent;
+    border-radius: 1rem;
+    border: 1px solid #EEEEEE;
+    padding: 0.5rem;
+`
+
+const Button = styled.button`
+    background: transparent;
+    border: none;
+    color: #fefefe;
+`
 
 type CityProperties = {
     country: string;
@@ -30,9 +53,9 @@ export const Form = () => {
     }
     return (
         <>
-            <form onSubmit={handleSubmit}>
+            <FormHTML onSubmit={handleSubmit}>
                 <label htmlFor="city-name">City Name: </label>
-                <input 
+                <Input 
                 type="text" 
                 id="city-name" 
                 name="city-name" 
@@ -40,8 +63,8 @@ export const Form = () => {
                 value={city}
                 onChange={event => setCity(event.target.value)}
                 />
-                <button type="submit">Enviar</button>
-            </form>
+                <Button type="submit"><FontAwesomeIcon icon={faSearch}/></Button>
+            </FormHTML>
             {cityProperties ? (
                 <Weather lat={cityProperties.lat} lon={cityProperties.lon} />
             ) : (
